@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HLS</title>
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+   </head>
+  <body>
+    <video
+      id="my-video"
+      class="video-js"
+      preload="auto"
+      controls
+      width="640"
+      height="264"
+    >
+      <source src="./assets/my_video_manifest.mpd" type="application/dash+xml"/>
+      <source src="./assets/input.mkv" />
+    </video>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+    <script>
+      fluidPlayer("my-video", {
+        layoutControls: {
+          fillContainer: true,
+          primaryColor: "#28B8ED",
+          layout:"default"              
+        },
+      });
+      // document.addEventListener('DOMContentLoaded',()=>{
+      //   let video = document.getElementById('my-video')
+          
+      // })
+    </script>
+  </body>
+</html>
